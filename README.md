@@ -1,4 +1,4 @@
-| ![Shiny Package Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/724px-R_logo.svg.png) | **Bienvenue dans mon cours pour apprendre à déployer des application R avec le package Shiny.**<br>Ce dépôt GitHub est conçu pour fournir à la fois des ressources théoriques et pratiques pour maîtriser Shiny, en un rien de temps |
+| ![Shiny Package Logo](https://github.com/universdesdonnees/R-Shiny/blob/master/Images/shiny.png?raw=true) | **Bienvenue dans mon cours pour apprendre à déployer des application R avec le package Shiny.**<br>Ce dépôt GitHub est conçu pour fournir à la fois des ressources théoriques et pratiques pour maîtriser Shiny, en un rien de temps |
 | --- | --- |
 
 ## 👉 ICI : [Cours]() 👈
