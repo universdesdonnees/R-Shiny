@@ -1,29 +1,59 @@
-# Cours pour Maîtriser R Shiny
+| ![Shiny Package Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/724px-R_logo.svg.png) | **Bienvenue dans mon cours pour apprendre à déployer des application R avec le package Shiny.**<br>Ce dépôt GitHub est conçu pour fournir à la fois des ressources théoriques et pratiques pour maîtriser Shiny, en un rien de temps |
+| --- | --- |
 
-![Introduction au cours R Shiny](https://github.com/universdesdonnees/R-Shiny/blob/main/architecture.png?raw=true)
+## 👉 ICI : [Cours]() 👈
 
-## À propos du projet
+1. ✨**Introduction à R et Bases de R** 
+   - Installation et configuration de l'environnement R
+   - Présentation de l'interface RStudio
+   - Premiers pas avec R
+2. ✨**Les opérateurs et les structures de données** 
+   - Opérateurs booléens et logiques 
+   - Structure de données : vecteur, matrice, liste, dataframe
+   - La famille des fonction  `apply` 
+3. ✨**Contrôle de flux** 
+   - Conditions : if/else, ifelse(), switch
+   - Boucles : for et while
+   - Fonctions 
+4. ✨**Projet Crime LA**
 
-Ce dépôt est une collection de ressources pédagogiques pour apprendre R Shiny. 
+## Pré-requis 
 
-Actuellement, il contient deux cours sous forme de PDF : le premier portant sur la création d'interfaces utilisateur (UI) et le second sur le concept de réactivité dans R Shiny. 
+### Prerequisites
 
-Ces cours sont conçus pour aider les utilisateurs à comprendre et à maîtriser les principes fondamentaux de R Shiny pour le développement d'applications.
+- R (version 3.6.0 or higher)
+- RStudio
+- Shiny package
 
-## Contenu du Cours
+### Installation
 
-### Cours 1 : Les Interfaces Utilisateur [Cours 1](https://github.com/universdesdonnees/R-Shiny/blob/main/cours1.pdf)
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/universdesdonnees/R-Shiny.git
+   ```
+2. Open the project in RStudio and install the required packages:
+   ```R
+   install.packages("shiny")
+   # Add any other packages you need here
+   ```
+   
+## Exercices
 
-Ce PDF détaille les étapes de création d'interfaces utilisateur efficaces avec R Shiny, en explorant les différents éléments et leur mise en forme.
+Chaque section du cours est accompagnée d'exercices pratiques pour renforcer l'apprentissage. 
 
-### Cours 2 : La Réactivité [Cours 2](https://github.com/universdesdonnees/R-Shiny/blob/main/cours2.pdf)
+Les exercices sont disponibles ici : **[Exercices]()** 👈
 
-Ce PDF aborde le fonctionnement de la réactivité dans R Shiny, expliquant comment lier les entrées des utilisateurs aux sorties et autres éléments réactifs de l'application. 
+## Comment Utiliser ce Dépôt
 
-## Utilisation
-
-Les PDF peuvent être consultés directement sur GitHub ou téléchargés pour une lecture hors ligne.
+- Clonez ce dépôt sur votre machine locale.
+- Installez R et RStudio pour suivre les leçons et faire les exercices.
+- Parcourez les dossiers de leçons et commencez votre apprentissage.
 
 ## Contact
+Pour toute question ou suggestion, n'hésitez pas à me contacter via :
+ 
+- [LinkedIn](https://www.linkedin.com/in/menyssacherifa/) 
+- [Mail](cmenyssa@live.fr)
+- [Website](https://mcherifaluron.com)
 
-Pour toute question ou demande d'information, n'hésitez pas à me contacter sur [LinkedIn](https://www.linkedin.com/newsletters/7100158974640967680/).
+---
