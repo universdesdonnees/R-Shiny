@@ -4,18 +4,19 @@
 ## 👉 ICI : [Cours]() 👈
 
 1. ✨**Introduction à R et Bases de R** 
-   - Installation et configuration de l'environnement R
-   - Présentation de l'interface RStudio
-   - Premiers pas avec R
+   -
+   - 
+   - 
 2. ✨**Les opérateurs et les structures de données** 
-   - Opérateurs booléens et logiques 
-   - Structure de données : vecteur, matrice, liste, dataframe
-   - La famille des fonction  `apply` 
+   - 
+   - 
+   - 
 3. ✨**Contrôle de flux** 
-   - Conditions : if/else, ifelse(), switch
-   - Boucles : for et while
-   - Fonctions 
+   - 
+   - 
+   - 
 4. ✨**Projet Crime LA**
+   - En cours 
 
 ## Pré-requis 
 
