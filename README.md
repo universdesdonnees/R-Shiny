@@ -38,11 +38,11 @@
    # Add any other packages you need here
    ```
    
-## Exercices
+## Exercices/Corrections
 
 Chaque section du cours est accompagnée d'exercices pratiques pour renforcer l'apprentissage. 
 
-Les exercices sont disponibles ici : **[Exercices]()** 👈
+Les corrections sont disponibles ici : **[Corrections](https://github.com/universdesdonnees/R-Shiny/tree/master/exercices)** 👈
 
 ## Comment Utiliser ce Dépôt
 
