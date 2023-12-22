@@ -1410,8 +1410,38 @@ avec R</a></h2>
       School Toulouse</a></li>
       </ul></li>
       </ul></li>
-      <li><a href="#exercice" id="toc-exercice">Exercice</a></li>
+      <li><a href="#leaflet-dans-rshiny" id="toc-leaflet-dans-rshiny">Leaflet dans Rshiny</a></li>
+      <li><a href="#exercice" id="toc-exercice">Exercice</a>
+      <ul>
+      <li><a href="#exercice-5" id="toc-exercice-5">Exercice 5</a></li>
       </ul></li>
+      </ul></li>
+      <li><a href="#projet-analyse-des-données-crime-la" id="toc-projet-analyse-des-données-crime-la">Projet : Analyse des
+      données CRIME LA</a>
+      <ul>
+      <li><a href="#développement" id="toc-développement">1.
+      Développement</a>
+      <ul>
+      <li><a href="#interface-utilisateur-1" id="toc-interface-utilisateur-1">Interface Utilisateur :</a></li>
+      </ul></li>
+      <li><a href="#données" id="toc-données">2.
+      <strong>Données</strong></a></li>
+      <li><a href="#dépôt-github" id="toc-dépôt-github">3. Dépôt
+      GitHub</a>
+      <ul>
+      <li><a href="#exemple-de-structure-de-dépôt" id="toc-exemple-de-structure-de-dépôt">Exemple de Structure de
+      Dépôt</a></li>
+      </ul></li>
+      <li><a href="#documentation" id="toc-documentation">4.
+      Documentation</a></li>
+      <li><a href="#soumission" id="toc-soumission">5.
+      Soumission</a></li>
+      <li><a href="#critères-dévaluation" id="toc-critères-dévaluation">Critères d’Évaluation</a></li>
+      <li><a href="#conseils-supplémentaires" id="toc-conseils-supplémentaires">Conseils
+      Supplémentaires</a></li>
+      </ul></li>
+      <li><a href="#projet-new-york-city-taxi-trip-duration" id="toc-projet-new-york-city-taxi-trip-duration">Projet :
+      <strong>New York City Taxi Trip Duration</strong></a></li>
       </ul>
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
@@ -2078,8 +2108,8 @@ différentes formes dans l’UI. Le tableau suivant couvre les types de
 sorties les plus couramment utilisés dans Shiny.</p>
 <table>
 <colgroup>
-<col width="33%" />
-<col width="66%" />
+<col width="34%" />
+<col width="65%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2225,9 +2255,9 @@ facilement la fonction appropriée en fonction de vos besoins en matière
 de visualisation et d’interface utilisateur.</p>
 <table>
 <colgroup>
-<col width="25%" />
+<col width="26%" />
 <col width="27%" />
-<col width="47%" />
+<col width="45%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -3187,6 +3217,7 @@ dynamique.</p>
 </div>
 <div id="cartographie-avec-leaflet" class="section level2">
 <h2>Cartographie avec <code>leaflet</code></h2>
+<p><strong><em>site officiel : <a href="https://rstudio.github.io/leaflet/colors.html" class="uri">https://rstudio.github.io/leaflet/colors.html</a></em></strong></p>
 <p><strong>Leaflet</strong> est une bibliothèque JavaScript open source
 très populaire, utilisée pour créer des cartes interactives sur le Web.
 Bien qu’elle soit principalement basée sur JavaScript, elle peut être
@@ -3414,11 +3445,163 @@ styles de tuiles et les popups.</p>
 </div>
 </div>
 </div>
+<div id="leaflet-dans-rshiny" class="section level2">
+<h2><a href="https://rstudio.github.io/leaflet/shiny.html">Leaflet dans
+Rshiny</a></h2>
+<p>Le package Leaflet inclut des fonctionnalités puissantes et pratiques
+pour l’intégration avec les applications Shiny.</p>
+<p>La plupart des widgets de sortie Shiny sont incorporés dans une
+application en incluant une sortie (par exemple,
+<code>plotOutput</code>) pour le widget dans la définition de
+l’interface utilisateur, et en utilisant une fonction de rendu (par
+exemple, <code>renderPlot</code>) dans la fonction serveur.</p>
+<p>Les cartes Leaflet ne sont pas différentes ; dans l’interface
+utilisateur, vous appelez <code>leafletOutput</code>, et du côté
+serveur, vous attribuez un appel à <code>renderLeaflet</code> à la
+sortie. À l’intérieur de l’expression <code>renderLeaflet</code>, vous
+retournez un objet de carte Leaflet.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a>r_colors <span class="ot">&lt;-</span> <span class="fu">rgb</span>(<span class="fu">t</span>(<span class="fu">col2rgb</span>(<span class="fu">colors</span>()) <span class="sc">/</span> <span class="dv">255</span>))</span>
+<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="fu">names</span>(r_colors) <span class="ot">&lt;-</span> <span class="fu">colors</span>()</span>
+<span id="cb40-6"><a href="#cb40-6" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb40-8"><a href="#cb40-8" tabindex="-1"></a>  <span class="fu">leafletOutput</span>(<span class="st">&quot;mymap&quot;</span>),</span>
+<span id="cb40-9"><a href="#cb40-9" tabindex="-1"></a>  <span class="fu">p</span>(),</span>
+<span id="cb40-10"><a href="#cb40-10" tabindex="-1"></a>  <span class="fu">actionButton</span>(<span class="st">&quot;recalc&quot;</span>, <span class="st">&quot;Nouveaux points&quot;</span>)</span>
+<span id="cb40-11"><a href="#cb40-11" tabindex="-1"></a>)</span>
+<span id="cb40-12"><a href="#cb40-12" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="#cb40-13" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb40-14"><a href="#cb40-14" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" tabindex="-1"></a>  points <span class="ot">&lt;-</span> <span class="fu">eventReactive</span>(input<span class="sc">$</span>recalc, {</span>
+<span id="cb40-16"><a href="#cb40-16" tabindex="-1"></a>    <span class="fu">cbind</span>(<span class="fu">rnorm</span>(<span class="dv">40</span>) <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">13</span>, <span class="fu">rnorm</span>(<span class="dv">40</span>) <span class="sc">+</span> <span class="dv">48</span>)</span>
+<span id="cb40-17"><a href="#cb40-17" tabindex="-1"></a>  }, <span class="at">ignoreNULL =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-18"><a href="#cb40-18" tabindex="-1"></a></span>
+<span id="cb40-19"><a href="#cb40-19" tabindex="-1"></a>  output<span class="sc">$</span>mymap <span class="ot">&lt;-</span> <span class="fu">renderLeaflet</span>({</span>
+<span id="cb40-20"><a href="#cb40-20" tabindex="-1"></a>    <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb40-21"><a href="#cb40-21" tabindex="-1"></a>      <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Stadia.StamenTonerLite,</span>
+<span id="cb40-22"><a href="#cb40-22" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">noWrap =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-23"><a href="#cb40-23" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb40-24"><a href="#cb40-24" tabindex="-1"></a>      <span class="fu">addMarkers</span>(<span class="at">data =</span> <span class="fu">points</span>())</span>
+<span id="cb40-25"><a href="#cb40-25" tabindex="-1"></a>  })</span>
+<span id="cb40-26"><a href="#cb40-26" tabindex="-1"></a>}</span>
+<span id="cb40-27"><a href="#cb40-27" tabindex="-1"></a></span>
+<span id="cb40-28"><a href="#cb40-28" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div>
+<p>Dans cet exemple, une application Shiny est créée avec une carte
+Leaflet interactive. Les points sur la carte sont recalculés et mis à
+jour à chaque fois que l’utilisateur clique sur le bouton “Nouveaux
+points”.</p>
+</div>
 <div id="exercice" class="section level2">
 <h2>Exercice</h2>
-<p>Travailler sur votre dashboard de données criminelles en intégrant: -
-réactivité - carte - onglets - valuebox</p>
+<div id="exercice-5" class="section level3">
+<h3>Exercice 5</h3>
+<p>Créer une application R Shiny complète pour cette analyse :</p>
+<p><strong>“Beer or Coffee in London - Tough Choice? No
+more!”</strong></p>
+<p><a href="https://www.kaggle.com/code/gpreda/beer-or-coffee-in-london-tough-choice-no-more" class="uri">https://www.kaggle.com/code/gpreda/beer-or-coffee-in-london-tough-choice-no-more</a></p>
 </div>
+</div>
+</div>
+<div id="projet-analyse-des-données-crime-la" class="section level1">
+<h1>Projet : Analyse des données CRIME LA</h1>
+<p>Créer un projet pour une application web Shiny basée sur un tableau
+de bord de données criminelles à Los Angeles.</p>
+<p>Le projet sera organisé en plusieurs étapes, en intégrant les
+éléments de réactivité, une carte, des onglets, et des ValueBoxes.</p>
+<p>Pour mener à bien votre projet de développement d’une application
+Shiny sur les données de criminalité à Los Angeles, voici un plan
+d’action détaillé répondant aux exigences énoncées :</p>
+<div id="développement" class="section level3">
+<h3>1. Développement</h3>
+<div id="interface-utilisateur-1" class="section level4">
+<h4>Interface Utilisateur :</h4>
+<ul>
+<li><strong>Conception</strong> : Utilisez <code>shinydashboard</code>
+pour une interface claire et professionnelle.</li>
+<li><strong>Visualisation</strong> : Intégrez <code>ggplot2</code> pour
+les graphiques et <code>leaflet</code> pour les cartes.</li>
+<li><strong>Filtrage des Données</strong> : Ajoutez des widgets comme
+<code>selectInput</code>, <code>dateRangeInput</code> pour filtrer par
+type de crime, date, etc.</li>
+<li><strong>Statistiques Résumées</strong> : Utilisez
+<code>DT::datatable()</code> pour afficher les données et
+<code>summary()</code> pour les statistiques.</li>
+</ul>
+</div>
+</div>
+<div id="données" class="section level3">
+<h3>2. <strong>Données</strong></h3>
+<p>Ne pas inclure le fichier de données dans le dépôt GitHub. Fournir
+des instructions sur comment charger le jeu de données dans le fichier
+README.</p>
+</div>
+<div id="dépôt-github" class="section level3">
+<h3>3. Dépôt GitHub</h3>
+<ul>
+<li><strong>Création du Dépôt</strong> : Créer un dépôt public sur
+GitHub.</li>
+<li><strong>Fichier README</strong> : Inclure des instructions
+d’installation, un aperçu du projet, et des détails sur les
+fonctionnalités.</li>
+<li><strong>Code Source</strong> : Déposer le code de l’application et
+les scripts nécessaires.</li>
+</ul>
+<div id="exemple-de-structure-de-dépôt" class="section level4">
+<h4>Exemple de Structure de Dépôt</h4>
+<pre><code>/mon-application-shiny
+  /www
+  app.R
+  global.R
+  README.md
+  .gitignore</code></pre>
+</div>
+</div>
+<div id="documentation" class="section level3">
+<h3>4. Documentation</h3>
+<ul>
+<li><strong>Documentation</strong> : Commentez le code pour expliquer
+les fonctions et les choix logiques.</li>
+<li><strong>Commentaires</strong> : Ajoutez des commentaires aux
+sections clés pour faciliter la compréhension.</li>
+</ul>
+</div>
+<div id="soumission" class="section level3">
+<h3>5. Soumission</h3>
+<ul>
+<li><strong>Lien GitHub</strong> : Assurez-vous que le lien est
+accessible et que le dépôt est public.</li>
+<li><strong>Rapport</strong> : Inclure un rapport dans le dépôt GitHub
+ou en format PDF décrivant les choix de conception et les défis.</li>
+</ul>
+</div>
+<div id="critères-dévaluation" class="section level3">
+<h3>Critères d’Évaluation</h3>
+<p>Assurez-vous que votre application répond aux critères d’évaluation
+mentionnés, en mettant l’accent sur la fonctionnalité, l’utilisabilité,
+la qualité du code, l’analyse des données, et l’utilisation efficace de
+GitHub.</p>
+</div>
+<div id="conseils-supplémentaires" class="section level3">
+<h3>Conseils Supplémentaires</h3>
+<ul>
+<li><strong>Testez</strong> votre application en profondeur pour vous
+assurer qu’elle fonctionne sans erreur.</li>
+<li><strong>Révisez</strong> votre application en fonction des retours
+des utilisateurs ou des collègues si possible.</li>
+<li><strong>Mettez en Évidence</strong> les fonctionnalités uniques ou
+les analyses intéressantes dans votre rapport.</li>
+</ul>
+<p>En suivant ce plan d’action, vous serez en mesure de créer une
+application Shiny bien conçue et documentée, tout en respectant les
+exigences éthiques et les meilleures pratiques de développement.</p>
+<p>Bonne chance avec votre projet !</p>
+</div>
+</div>
+<div id="projet-new-york-city-taxi-trip-duration" class="section level1">
+<h1>Projet : <strong>New York City Taxi Trip Duration</strong></h1>
+<p>(à venir)</p>
 </div>
 </div>
 
