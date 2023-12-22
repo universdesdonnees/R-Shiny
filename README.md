@@ -3,18 +3,18 @@
 
 ## 👉 ICI : [Cours]() 👈
 
-1. ✨**Introduction à R et Bases de R** 
-   -
-   - 
-   - 
-2. ✨**Les opérateurs et les structures de données** 
-   - 
-   - 
-   - 
-3. ✨**Contrôle de flux** 
-   - 
-   - 
-   - 
+1. ✨**Créer une première application Shiny** 
+   - Application Web
+   - Package `shiny`
+   - Première application
+2. ✨**Interaction ui / server** 
+   - Interface utilisateur : widgets d'entrées et de sorties
+   - Server : fonctions `render`
+   - Expression réactive
+3. ✨**Organisation et cartographie** 
+   - Les onglets
+   - Afficher des KPI
+   - Cartographie avec `Leaflet`
 4. ✨**Projet Crime LA**
    - En cours 
 
@@ -38,11 +38,11 @@
    # Add any other packages you need here
    ```
    
-## Exercices
+## Exercices/Corrections
 
 Chaque section du cours est accompagnée d'exercices pratiques pour renforcer l'apprentissage. 
 
-Les exercices sont disponibles ici : **[Exercices]()** 👈
+Les corrections sont disponibles ici : **[Corrections](https://github.com/universdesdonnees/R-Shiny/tree/master/exercices)** 👈
 
 ## Comment Utiliser ce Dépôt
 
