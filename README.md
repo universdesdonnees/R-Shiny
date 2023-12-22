@@ -1,7 +1,7 @@
 | ![Shiny Package Logo](https://github.com/universdesdonnees/R-Shiny/blob/master/Images/shiny.png?raw=true) | **Bienvenue dans mon cours pour apprendre à déployer des application R avec le package Shiny.**<br>Ce dépôt GitHub est conçu pour fournir à la fois des ressources théoriques et pratiques pour maîtriser Shiny, en un rien de temps |
 | --- | --- |
 
-## 👉 ICI : [Cours]() 👈
+## 👉 ICI : [Cours](cours/cours.html) 👈
 
 1. ✨**Créer une première application Shiny** 
    - Application Web
