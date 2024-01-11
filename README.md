@@ -15,8 +15,14 @@
    - Les onglets
    - Afficher des KPI
    - Cartographie avec `Leaflet`
-4. ✨**Projet Crime LA**
-   - En cours 
+**Projet Crime LA**
+**Projet Velib Paris**
+4. ✨**Personnalisation d'une application Shiny** 
+   - Themes avec `shinythemes`
+   - Ajout de code HTML avec `tags`
+   - Ajout de code CSS
+**Projet Shopper Reviews**
+
 
 ## Pré-requis 
 
